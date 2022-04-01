@@ -2,11 +2,7 @@ package com.example.myapplicationtest;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.graphics.Color;
-import android.graphics.Point;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,7 +47,7 @@ public abstract class BaseDialogFragment extends DialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStyle(DialogFragment.STYLE_NO_TITLE, R.style.BaseDialog);
+        setStyle(DialogFragment.STYLE_NO_TITLE, AndroidUtil.isTablet(requireContext()) ? R.style.BaseDialogTablet : R.style.BaseDialog);
     }
 
     @Nullable

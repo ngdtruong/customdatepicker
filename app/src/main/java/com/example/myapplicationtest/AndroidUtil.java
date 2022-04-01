@@ -1,26 +1,10 @@
 package com.example.myapplicationtest;
 
-import android.app.Activity;
-import android.app.DownloadManager;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Point;
-import android.media.MediaPlayer;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Environment;
 import android.os.Handler;
-import android.util.DisplayMetrics;
-import android.view.Display;
-import android.view.View;
-import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 
 @SuppressWarnings({"WeakerAccess", "unused"})
 public class AndroidUtil {
@@ -41,6 +25,10 @@ public class AndroidUtil {
 
     public static float getAspectRatio() {
         return (float) getScreenHeight() / (float) getScreenWidth();
+    }
+
+    public static boolean isTablet(Context context){
+        return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
     }
 
 
