@@ -69,6 +69,8 @@ public abstract class BaseDialogFragment extends DialogFragment {
             }
         }
 
+        setupDialogWindow();
+
         return super.onCreateView(inflater, container, savedInstanceState);
 
     }
@@ -95,7 +97,7 @@ public abstract class BaseDialogFragment extends DialogFragment {
             Window window = dialog.getWindow();
             if (window != null) {
                 window.requestFeature(Window.FEATURE_NO_TITLE);
-                window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 window.setLayout((int) (AndroidUtil.displaySize.x * 0.9),
                         ViewGroup.LayoutParams.WRAP_CONTENT);
                 window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
