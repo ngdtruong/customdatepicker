@@ -3,8 +3,10 @@ package com.example.myapplicationtest;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,10 +68,11 @@ public abstract class BaseDialogFragment extends DialogFragment {
                 params.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
 
                 getDialog().getWindow().setAttributes(params);
+                getDialog().getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
             }
         }
 
-        setupDialogWindow();
 
         return super.onCreateView(inflater, container, savedInstanceState);
 
